@@ -30,3 +30,14 @@ DescribeDifference(1:15, 9:17)
 ### Bonus ###
 
 # Rewrite your `DescribeDifference` function to tell you the name of the vector which is longer
+DescribeDifference <- function(a,b) {
+  diff <- length(a) - length(b)
+  if(diff > 0) {
+    sentence <- paste('Your first vector',deparse(substitute(a)),'is longer by', diff, 'elements')
+  } else {
+    sentence <- paste('Your second vector',deparse(substitute(b)),'is longer by', -diff, 'elements')
+  }
+  return(sentence)
+}
+
+DescribeDifference(1:100, 7:23)
